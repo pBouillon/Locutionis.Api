@@ -7,6 +7,15 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Deployment configuration
+var port = Environment.GetEnvironmentVariable("PORT");
+
+if (port is not null)
+{
+    builder.WebHost.UseUrls($"http://*:{port}");
+}
+
+// Database configuration
 const string connectionString = "DataSource=locutionis_shared_db;mode=memory;cache=shared";
 
 var keepAliveConnection = new SqliteConnection(connectionString);
@@ -15,6 +24,7 @@ keepAliveConnection.Open();
 builder.Services.AddDbContext<ApplicationDbContext>(options
     => options.UseSqlite(connectionString));
 
+// DI setup
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -57,13 +67,8 @@ var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 context.Seed();
 
 // HTTP pipeline configuration
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseCors();
 

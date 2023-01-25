@@ -6,40 +6,40 @@ internal static class ApplicationDbContextExtensions
 {
     private static readonly IEnumerable<FigureOfSpeech> _figuresOfSpeech = new[]
     {
-        // Alitération
+        // AlitÃ©ration
         new FigureOfSpeech
         {
-            Name = "Alitération",
+            Name = "AlitÃ©ration",
             Description = """
-            L'alitération est la répétition d'une ou de plusieurs consonnes ou 
-            plus généralement d'un même son consonne.
+            L'alitÃ©ration est la rÃ©pÃ©tition d'une ou de plusieurs consonnes ou 
+            plus gÃ©nÃ©ralement d'un mÃªme son consonne.
             """,
             Goal = """
-            Le sens de la répétition du son se trouve dans le contexte dans lequel 
-            il est utilisé. Par exemple, pour décrire un éboulement, un son [r] 
-            répété rappellera les roulements des rochers qui tombent.
+            Le sens de la rÃ©pÃ©tition du son se trouve dans le contexte dans lequel 
+            il est utilisÃ©. Par exemple, pour dÃ©crire un Ã©boulement, un son [r] 
+            rÃ©pÃ©tÃ© rappellera les roulements des rochers qui tombent.
             """,
             Sources = new List<Source>
             {
                 new()
                 {
                     DisplayName = "Wikipedia",
-                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Alit%C3%A9ration").Uri,
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/AlitÃ©ration").Uri,
                 }
             },
             Usages = new List<Usage>
             {
                 new()
                 {
-                    Example = "Pour qui sont ces serpents qui sifflent sur vos têtes ?",
-                    Source = "Racine, Andromaque, acte V, scène 5",
+                    Example = "Pour qui sont ces serpents qui sifflent sur vos tÃªtes ?",
+                    Source = "Racine, Andromaque, acte V, scÃ¨ne 5",
                 },
                 new()
                 {
                     Example = """
-                    (...) l'onde de choc fractura le fémur d'enceinte et le vent sabla 
-                    cru le village à travers les jointures béantes du granit. Sous mon 
-                    casque, le son atroce du roc poncé perce, mes dents vibrent - je plie 
+                    (...) l'onde de choc fractura le fÃ©mur d'enceinte et le vent sabla 
+                    cru le village Ã  travers les jointures bÃ©antes du granit. Sous mon 
+                    casque, le son atroce du roc poncÃ© perce, mes dents vibrent - je plie 
                     contre Pietro, des aiguilles de quartz crissent sur son masque de contre. 
                     """,
                     Source = "La horde du contrevent, Alain Damasio"
@@ -56,14 +56,14 @@ internal static class ApplicationDbContextExtensions
 
             Description = raw.Description
                 .Trim()
-                .Replace(Environment.NewLine, string.Empty),
+                .Replace("\r\n", string.Empty),
 
             Goal = raw.Goal
                 .Trim()
-                .Replace(Environment.NewLine, string.Empty),
+                .Replace("\r\n", string.Empty),
 
             Sources = raw.Sources,
-          
+
             Usages = raw.Usages.Select(Sanitized).ToList(),
         };
 
@@ -72,11 +72,11 @@ internal static class ApplicationDbContextExtensions
         {
             Example = raw.Example
                 .Trim()
-                .Replace(Environment.NewLine, string.Empty),
+                .Replace("\r\n", string.Empty),
 
             Source = raw.Source
                 .Trim()
-                .Replace(Environment.NewLine, string.Empty),
+                .Replace("\r\n", string.Empty),
         };
 
     public static void Seed(this ApplicationDbContext context)
