@@ -129,7 +129,7 @@ internal static class ApplicationDbContextExtensions
                 },
                 new()
                 {
-                    DisplayName = "Youtube - Point Culture",
+                    DisplayName = "Youtube - Le Point Culture",
                     Url = new UriBuilder("https://www.youtube.com/watch?v=ByDNEsBNf24&t=1278s").Uri,
                 },
             },
@@ -231,6 +231,63 @@ internal static class ApplicationDbContextExtensions
                 },
             },
         },
+
+        // Comparaison
+        new FigureOfSpeech
+        {
+            Name = "Comparaison",
+            Description = """
+            Une comparaison est la mise en relation de deux éléments différents 
+            partageant un point commun. Elle est constituée d'un comparé (l'objet 
+            de la comparaison), d'un comparant (le 'thème' utilisé pour imager le 
+            comparé) et d'un outil de comparaison (c'est ce qui met en liaison le 
+            comparé et le comparant).
+            """,
+            Purpose = """
+            En mettant deux termes sur le même plan littéraire, la comparaison 
+            permet de souligner leurs points communs pour imager ses propos.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Comparaison_(rh%C3%A9torique)").Uri,
+                },
+                new()
+                {
+                    DisplayName = "La langue française",
+                    Url = new UriBuilder("https://www.lalanguefrancaise.com/linguistique/la-comparaison-figure-de-style").Uri,
+                },
+                new()
+                {
+                    DisplayName = "alloprof",
+                    Url = new UriBuilder("https://www.alloprof.qc.ca/fr/eleves/bv/francais/la-comparaison-f1369").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Youtube - Le Point Culture",
+                    Url = new UriBuilder("https://youtu.be/ByDNEsBNf24?t=478").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Et cette terre était proche, et elle lui apparaissait comme un bouclier sur la mer sombre.",
+                    Source = "Homère, L'Odyssée, Chapitre 5",
+                },
+                new()
+                {
+                    Example = "Sa barbe était d'argent comme un ruisseau d'avril.",
+                    Source = "Victor Hugo, Booz endormi",
+                },
+                new()
+                {
+                    Example = "Tu es fait comme un rat !",
+                },
+            },
+        }
     }
     .Select(Sanitized);
 
