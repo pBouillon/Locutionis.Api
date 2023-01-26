@@ -25,6 +25,11 @@ internal static class ApplicationDbContextExtensions
                 {
                     DisplayName = "Wikipedia",
                     Url = new UriBuilder("https://fr.wikipedia.org/wiki/Alitération").Uri,
+                },
+                new()
+                {
+                    DisplayName = "La culture générale",
+                    Url = new UriBuilder("https://www.laculturegenerale.com/alliteration-definition-exemples/").Uri)
                 }
             },
             Usages = new List<Usage>
