@@ -18,7 +18,7 @@ internal sealed class GetFiguresOfSpeechByName
     public sealed record Usage
     {
         public string Example { get; init; } = null!;
-        public string Source { get; init; } = null!;
+        public string? Source { get; init; }
     }
 
     public sealed record FigureOfSpeechDetails

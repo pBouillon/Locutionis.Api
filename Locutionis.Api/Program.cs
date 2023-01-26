@@ -32,7 +32,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "Locutionis API",
-        Description = "Locutionis REST API exposing some figures of speech and their definition.",
+        Description = "Locutionis API exposing some figures of speech and their definition.",
         Contact = new OpenApiContact
         {
             Name = "Pierre Bouillon",
