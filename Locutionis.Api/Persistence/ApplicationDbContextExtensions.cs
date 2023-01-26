@@ -545,6 +545,61 @@ internal static class ApplicationDbContextExtensions
                 },
             },
         },
+
+        // Métonymie
+        new FigureOfSpeech
+        {
+            Name = "Métonymie",
+            Description = """
+            La métonymie consiste en le remplacement d'un terme désignant un 
+            tout par un autre en désignant une partie. Le rapport entre les 
+            deux est implicite et, s'il n'est pris qu'au premier degré, la 
+            phrase devient alors incohérente.
+            """,
+            Purpose = """
+            Utiliser une métonymie permet d'alléger la structure de la phrase 
+            comme par exemple dire "Je n'ai plus de batterie" au lieu de "Je 
+            n'ai plus d'énergie dans mon téléphone portable". Elle a aussi 
+            l'avantage d'englober toute la population désignée et donc peut 
+            renforcer un argumentaire. Lors d'un débat, si l'on désigne "les 
+            français" au lieu de cibler la tranche de population, on donne 
+            alors l'impression que notre discours concerne l'entièreté des 
+            habitants de France.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "linternaute",
+                    Url = new UriBuilder("https://www.linternaute.fr/dictionnaire/fr/definition/metonymie/").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Métonymie").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Youtube - Le Point Culture",
+                    Url = new UriBuilder("https://youtu.be/ByDNEsBNf24?t=521").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Tu veux boire un verre ?"
+                },
+                new()
+                {
+                    Example = "Je n'ai plus de batterie.",
+                },
+                new()
+                {
+                    Example = "La France a obtenu une médaille d'or aux Jeux Olympiques.",
+                },
+            },
+        },
     }
     .Select(Sanitized);
 
