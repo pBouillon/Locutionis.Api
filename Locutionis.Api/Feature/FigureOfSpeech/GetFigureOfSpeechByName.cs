@@ -50,7 +50,7 @@ internal sealed class GetFiguresOfSpeechByName
 
         var details = figureOfSpeech.Adapt<FigureOfSpeechDetails>();
 
-        logger.LogInformation("'{FigureOfSpeech}' found: {@Details}", name, details);
+        logger.LogInformation("'{FigureOfSpeech}' found and returned", name);
 
         return TypedResults.Ok(details);
     }
