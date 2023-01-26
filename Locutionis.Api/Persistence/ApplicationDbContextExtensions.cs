@@ -360,7 +360,43 @@ internal static class ApplicationDbContextExtensions
                     Example = "La Russie a engagé une opération militaire spéciale en Ukraine.",
                 },
             },
-        }
+        },
+
+        // Hyperhypotaxe
+        new FigureOfSpeech
+        {
+            Name = "Hyperhypotaxe",
+            Description = """
+            On parle d'hyperhypotaxe lorsqu'une phrase est construite avec un 
+            nombre excessif de prépositions.
+            """,
+            Purpose = """
+            L'hyperhypotaxe permet souvent de mettre démesurément en avant les 
+            détails d'un argumentaire, perdant ainsi la personne qui l'écoute ou 
+            l'empêchant de formuler facilement un contre-argument, ces derniers 
+            n'en finissant pas.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipédia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Hyperhypotaxe").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Wiktionnaire",
+                    Url = new UriBuilder("https://fr.wiktionary.org/wiki/hyperhypotaxe").Uri,
+                }
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Martial est fils de noble, puisque son père est quasi-baron, étant donné que sa mère était une fille Angenaux, qui étaient reconnus comme maîtres des terres, et que sa belle-mère avait des accointances avec les De Bellot, à qui appartient le château...",
+                }
+            },
+        },
     }
     .Select(Sanitized);
 
