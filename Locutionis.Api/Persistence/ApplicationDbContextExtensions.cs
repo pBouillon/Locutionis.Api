@@ -317,6 +317,50 @@ internal static class ApplicationDbContextExtensions
                 },
             },
         },
+
+        // Euphémisme
+        new FigureOfSpeech
+        {
+            Name = "Euphémisme",
+            Description = """
+            L'euphémisme est le fait d'exprimer une idée en atténuant la réalité 
+            en employant un mot moins fort.
+            """,
+            Purpose = """
+            Le but de l'euphémisme est d'adoucir des propos qui pourraient être 
+            blessants ou choquant. Elle peut également avoir un effet comique en 
+            étant utilisée de manière sarcastique.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Euph%C3%A9misme").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Youtube - Le Point Culture",
+                    Url = new UriBuilder("https://youtu.be/ByDNEsBNf24?t=207").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Office québécois de la langue française",
+                    Url = new UriBuilder("http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?id=3202").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Il a passé l'arme à gauche.",
+                },
+                new()
+                {
+                    Example = "La Russie a engagé une opération militaire spéciale en Ukraine.",
+                },
+            },
+        }
     }
     .Select(Sanitized);
 
