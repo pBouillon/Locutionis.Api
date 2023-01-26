@@ -103,6 +103,49 @@ internal static class ApplicationDbContextExtensions
                 }
             }
         }
+
+        // Antonomase
+        new FigureOfSpeech
+        {
+            Name = "Antonomase",
+            Description = """
+            L'antonomase est lorsque l'on utilise un nom commun comme nom propre ou bien l'inverse.
+            """,
+            Purpose = """
+            L'antonomase permet de souligner une aspect de ce que l'on désigne en l'assimilant à 
+            autre chose souvent connue pour une caractéristique spécifique.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipédia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Antonomase").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Larousse",
+                    Url = new UriBuilder("https://www.larousse.fr/dictionnaires/francais/antonomase/4354").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Youtube - Point Culture",
+                    Url = new UriBuilder("https://www.youtube.com/watch?v=ByDNEsBNf24&t=1278s").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "L'Arc de Triomphe a été rénové.",
+                },
+
+                new()
+                {
+                    Example = "Encore un rendez-vous amoureux ? Quel Don Juan !",
+                },
+            },
+        }
     }
     .Select(Sanitized);
 
