@@ -447,6 +447,54 @@ internal static class ApplicationDbContextExtensions
                 },
             },
         },
+
+        // Métalepse
+        new FigureOfSpeech
+        {
+            Name = "Métalepse",
+            Description = """
+            Une métalepse est une figure de style dans laquelle on remplace la 
+            cause par la conséquence et inversement.
+            """,
+            Purpose = """
+            La métalepse permet de passer sous silence une idée et de laisser 
+            le lecteur se représenter ce qui est réellement entendu.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipédia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Métalepse").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Larousse",
+                    Url = new UriBuilder("https://www.larousse.fr/dictionnaires/francais/métalepse/50831").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Youtube - Le Point Culture",
+                    Url = new UriBuilder("https://youtu.be/ByDNEsBNf24?t=1344").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Ce soir, nous dînons en Enfer !",
+                    Source = "300",
+                },
+                new()
+                {
+                    Example = "Il ne sera pas là ce matin, il a trop bu hier.",
+                },
+                new()
+                {
+                    Example = "Comme tu as grandi !",
+                },
+            },
+        },
     }
     .Select(Sanitized);
 
