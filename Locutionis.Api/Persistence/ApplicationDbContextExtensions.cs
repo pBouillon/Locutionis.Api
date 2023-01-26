@@ -102,7 +102,7 @@ internal static class ApplicationDbContextExtensions
                     Example = "Les étudiants, c'est comme le linge, quand il fait beau, ça sèche.",
                 }
             }
-        }
+        },
 
         // Antonomase
         new FigureOfSpeech
@@ -145,7 +145,7 @@ internal static class ApplicationDbContextExtensions
                     Example = "Encore un rendez-vous amoureux ? Quel Don Juan !",
                 },
             },
-        }
+        },
 
         // Catachrèse
         new FigureOfSpeech
@@ -197,6 +197,39 @@ internal static class ApplicationDbContextExtensions
                     Example = "Le pied de la table a été rongé par les thermites.",
                 },
             }
+        },
+
+        // Chleuasme
+        new FigureOfSpeech
+        {
+            Name = "Chleuasme",
+            Description = """
+            Le chleuasme est le fait de se dévaloriser en faisant preuve de 
+            fausse modestie.
+            """,
+            Purpose = """
+            En se critiquant, le locuteur cherche à s'attirer la sympathie de la 
+            personne qui l'écoute.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Chleuasme").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Je ne suis vraiment pas beau ce matin ...",
+                },
+                new()
+                {
+                    Example = "Je ne maîtrise pas très bien le sujet mais je peux quand même regarder.",
+                },
+            },
         },
     }
     .Select(Sanitized);
