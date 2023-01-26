@@ -600,6 +600,48 @@ internal static class ApplicationDbContextExtensions
                 },
             },
         },
+
+        // Parataxe
+        new FigureOfSpeech
+        {
+            Name = "Parataxe",
+            Description = """
+            La parataxe consiste en la juxtaposition de deux mots ou phrases 
+            sans mots de liaison. Dans une phrase, cette dernière semblera 
+            alors coupé alors que dans le cadre de mots, ces derniers donneront 
+            une impression télégraphique.
+            """,
+            Purpose = """
+            Puisque la relation entre les termes n'est pas définie, 
+            l'utilisation de la parataxe fait sonner la seconde partie comme la 
+            conséquence de la première.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipédia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Parataxe").Uri,
+                },
+                new()
+                {
+                    DisplayName = "La culture générale",
+                    Url = new UriBuilder("https://www.laculturegenerale.com/parataxe-definition-simple-exemples/").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Vous n'êtes point gentilhomme, vous n'aurez pas ma fille.",
+                    Source = "Molière, Le Bourgeois Gentilhomme, Scène XII",
+                },
+                new()
+                {
+                    Example = "Il faisait beau. Le Soleil illuminait la pièce. Au dehors, le chant des oiseaux résonnait dans la clairière.",
+                },
+            },
+        },
     }
     .Select(Sanitized);
 
