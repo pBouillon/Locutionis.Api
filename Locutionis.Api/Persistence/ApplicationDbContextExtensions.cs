@@ -397,6 +397,56 @@ internal static class ApplicationDbContextExtensions
                 }
             },
         },
+
+        // Litote
+        new FigureOfSpeech
+        {
+            Name = "Litote",
+            Description = """
+            La litote est une figure de style par laquelle on exprime l'inverse 
+            de ce que l'on souhaite faire comprendre. Elle peut également être 
+            exprimée par une double négation.
+            """,
+            Purpose = """
+            En en laissant entendre moins que ce que l'on veut, on renforce 
+            l'idée que l'on souhaite faire passer. Par exemple, dire qu'un 
+            repas n'était "pas mauvais" signifie bien généralement qu'il était 
+            très bon.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Litote").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Youtube - Le Point Culture",
+                    Url = new UriBuilder("https://youtu.be/ByDNEsBNf24?t=207").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Va, je ne te hais point.",
+                    Source = "Le Cid, Corneille",
+                },
+                new()
+                {
+                    Example = "Pas mauvais ce repas !",
+                },
+                new()
+                {
+                    Example = "Vous n'êtes pas sans savoir (...)",
+                },
+                new()
+                {
+                    Example = "Ça n'était pas le match du siècle.",
+                },
+            },
+        },
     }
     .Select(Sanitized);
 
