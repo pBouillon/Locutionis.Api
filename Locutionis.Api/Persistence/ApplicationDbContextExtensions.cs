@@ -14,7 +14,7 @@ internal static class ApplicationDbContextExtensions
             L'alitération est la répétition d'une ou de plusieurs consonnes ou 
             plus généralement d'un même son consonne.
             """,
-            Goal = """
+            Purpose = """
             Le sens de la répétition du son se trouve dans le contexte dans lequel 
             il est utilisé. Par exemple, pour décrire un éboulement, un son [r] 
             répété rappellera les roulements des rochers qui tombent.
@@ -58,7 +58,7 @@ internal static class ApplicationDbContextExtensions
                 .Trim()
                 .Replace("\r\n", string.Empty),
 
-            Goal = raw.Goal
+            Purpose = raw.Purpose
                 .Trim()
                 .Replace("\r\n", string.Empty),
 

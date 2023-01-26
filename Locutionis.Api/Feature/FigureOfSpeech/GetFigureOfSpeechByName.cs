@@ -25,7 +25,7 @@ internal sealed class GetFiguresOfSpeechByName
     {
         public string Name { get; init; } = null!;
         public string Description { get; init; } = null!;
-        public string Goal { get; init; } = null!;
+        public string Purpose { get; init; } = null!;
         public IEnumerable<Source> Sources { get; init; } = Enumerable.Empty<Source>();
         public IEnumerable<Usage> Usages { get; init; } = Enumerable.Empty<Usage>();
     }

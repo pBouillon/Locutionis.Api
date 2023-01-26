@@ -41,7 +41,7 @@ builder.Services.AddSwaggerGen(options =>
         License = new OpenApiLicense
         {
             Name = "Apache License 2.0",
-            Url = new Uri("https://github.com/pBouillon/locutionis/blob/main/LICENSE")
+            Url = new Uri("https://github.com/pBouillon/Locutionis.Api/blob/main/LICENSE")
         }
     });
 });
