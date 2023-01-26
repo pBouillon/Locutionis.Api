@@ -495,6 +495,56 @@ internal static class ApplicationDbContextExtensions
                 },
             },
         },
+
+        // Métaphore
+        new FigureOfSpeech
+        {
+            Name = "Métaphore",
+            Description = """
+            Une métaphore est similaire à une comparaison à la différence près 
+            qu'elle n'utilise pas d'outil de comparaison pour souligner le 
+            rapprochement de deux termes. C'est alors au lecteur d'essayer de 
+            deviner pourquoi l'auteur les a rapprochés pour créer cette image.
+            """,
+            Purpose = """
+            Le but de la métaphore est d'imager ses propos pour souligner 
+            l'intensité ou la connotation de ce qui est imagé en lui donnant 
+            le sens d'un autre mot ou expression.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "linternaute",
+                    Url = new UriBuilder("https://www.linternaute.fr/dictionnaire/fr/definition/metaphore/").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Métaphore").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Youtube - Le Point Culture",
+                    Url = new UriBuilder("https://youtu.be/ByDNEsBNf24?t=478").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Il n'est plus que l'ombre de lui-même."
+                },
+                new()
+                {
+                    Example = "Tu me casse les pieds."
+                },
+                new()
+                {
+                    Example = "Elle est morte dans la fleur de l'âge."
+                },
+            },
+        },
     }
     .Select(Sanitized);
 
