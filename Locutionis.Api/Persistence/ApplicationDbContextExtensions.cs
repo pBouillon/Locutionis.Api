@@ -642,6 +642,49 @@ internal static class ApplicationDbContextExtensions
                 },
             },
         },
+
+        // Prétérition
+        new FigureOfSpeech
+        {
+            Name = "Prétérition",
+            Description = """
+            La prétérition consiste à parler de quelque chose juste après avoir 
+            annoncé que nous n'allions pas le faire.
+            """,
+            Purpose = """
+            L'emploi de la prétérition permet d'aborder des sujets sensibles en 
+            déresponsabilisant l'orateur. Elle est également employée lorsque 
+            l'auteur souhaite aborder un sujet qu'il se refuse à décrire.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipédia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Prétérition").Uri,
+                },
+                new()
+                {
+                    DisplayName = "La culture générale",
+                    Url = new UriBuilder("https://www.laculturegenerale.com/preterition-definition-exemples/").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Je n'ai pas besoin de te rappeler que je dois envoyer ce document ce soir.",
+                },
+                new()
+                {
+                    Example = "Je ne vous dirais pas que le coût de la vie est trop élevé (...)",
+                },
+                new()
+                {
+                    Example = "Madame Y, pour ne pas la citer, (...)",
+                },
+            },
+        },
     }
     .Select(Sanitized);
 
