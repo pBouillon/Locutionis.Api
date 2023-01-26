@@ -287,7 +287,36 @@ internal static class ApplicationDbContextExtensions
                     Example = "Tu es fait comme un rat !",
                 },
             },
-        }
+        },
+
+        // Épanorthose
+        new FigureOfSpeech
+        {
+            Name = "Épanorthose",
+            Description = """
+            L'épanorthose est une figure de style qui consiste à corriger ses 
+            propres propos afin d'accentuer ce qu'il vient d'être affirmé, 
+            renforçant ainsi le sentiment exprimé.
+            """,
+            Purpose = """
+            Il s'agit d'une figure de style souvent utilisée pour donner un 
+            sentiment de sincérité dans son discours. En se corrigeant, le 
+            locuteur donne l'impression de rechercher la précision.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Épanorthose").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Wiktionnaire",
+                    Url = new UriBuilder("https://fr.wiktionary.org/wiki/Épanorthose").Uri,
+                },
+            },
+        },
     }
     .Select(Sanitized);
 
