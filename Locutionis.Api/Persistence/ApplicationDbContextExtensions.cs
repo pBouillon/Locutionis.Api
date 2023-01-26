@@ -316,6 +316,18 @@ internal static class ApplicationDbContextExtensions
                     Url = new UriBuilder("https://fr.wiktionary.org/wiki/Épanorthose").Uri,
                 },
             },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "J'espère, que dis-je ? Je suis sûr qu'on vous rendra justice.",
+                    Source = "Jean-Baptiste Chassignet, Mespris de la vie et consolation contre la mort",
+                },
+                new()
+                {
+                    Example = "Votre prudence ou plutôt votre lâcheté nous ont perdu.",
+                },
+            },
         },
 
         // Euphémisme
