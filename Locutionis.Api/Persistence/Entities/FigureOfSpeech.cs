@@ -5,7 +5,7 @@ namespace Locutionis.Api.Persistence.Entities;
 
 internal sealed class FigureOfSpeech
 {
-    private const int PreviewLength = 100;
+    private const int PreviewLength = 50;
 
     public Guid Id { get; set; }
     public required string Name { get; set; } = null!;
@@ -15,7 +15,9 @@ internal sealed class FigureOfSpeech
     public required ICollection<Usage> Usages { get; set; } = new List<Usage>();
     public required ICollection<Source> Sources { get; set; } = new List<Source>();
 
-    public string Preview => $"{Description[..PreviewLength]}...";
+    public string Preview => Description.Length > PreviewLength
+        ? $"{Description[..PreviewLength]}..."
+        : Description;
 }
 
 internal sealed class FigureOfSpeechConfiguration : IEntityTypeConfiguration<FigureOfSpeech>
