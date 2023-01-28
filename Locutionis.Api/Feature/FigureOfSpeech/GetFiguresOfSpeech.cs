@@ -1,3 +1,4 @@
+using Locutionis.Api.Extensions;
 using Locutionis.Api.Persistence;
 
 using Mapster;
@@ -25,7 +26,9 @@ internal sealed class GetFiguresOfSpeech
             .ConfigureAwait(false);
 
         logger.LogInformation("{FiguresOfSpeechCount} figures of speech found and returned", previews.Count);
+        
+        var ordered = previews.OrderBy(preview => preview.Name.WithoutDiacritics());
 
-        return TypedResults.Ok(previews.AsEnumerable());
+        return TypedResults.Ok(ordered.AsEnumerable());
     }
 }
