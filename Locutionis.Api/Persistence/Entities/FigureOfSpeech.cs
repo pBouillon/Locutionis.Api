@@ -5,13 +5,13 @@ namespace Locutionis.Api.Persistence.Entities;
 
 internal sealed class FigureOfSpeech
 {
-    private const int PreviewLength = 50;
+    private const int PreviewLength = 100;
 
     public Guid Id { get; set; }
     public required string Name { get; set; } = null!;
     public required string Description { get; set; } = null!;
     public required string Purpose { get; set; } = null!;
-    
+
     public required ICollection<Usage> Usages { get; set; } = new List<Usage>();
     public required ICollection<Source> Sources { get; set; } = new List<Source>();
 
