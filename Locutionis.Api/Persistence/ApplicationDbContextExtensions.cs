@@ -156,8 +156,7 @@ internal static class ApplicationDbContextExtensions
             """,
             Purpose = """
             L'aphorisme est souvent utilisée en philosophie ou en réthorique pour éveiller chez le locuteur 
-            questionnements et réflexion. Même si la phrase semble fermée, elle appelle en réalité au questionnement 
-            et à la réflexion.
+            questionnements et réflexion
             """,
             Sources = new List<Source>
             {
