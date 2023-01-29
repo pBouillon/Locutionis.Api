@@ -139,10 +139,55 @@ internal static class ApplicationDbContextExtensions
                 {
                     Example = "L'Arc de Triomphe a été rénové.",
                 },
-
                 new()
                 {
                     Example = "Encore un rendez-vous amoureux ? Quel Don Juan !",
+                },
+            },
+        },
+
+        // Aphorisme
+        new FigureOfSpeech
+        {
+            Name = "Aphorisme",
+            Description = """
+            L'aphorisme est une courte phrase qui résume en peu de mots une idée ou un concept en essayant de le 
+            faire apparaître sous un angle original en mettant, en général, deux éléments en opposition.
+            """,
+            Purpose = """
+            L'aphorisme est souvent utilisée en philosophie ou en réthorique pour éveiller chez le locuteur 
+            questionnements et réflexion. Même si la phrase semble fermée, elle appelle en réalité au questionnement 
+            et à la réflexion.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Centre National des Ressources Textuelles et Lexicales",
+                    Url = new UriBuilder("https://www.cnrtl.fr/definition/aphorisme").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Larousse",
+                    Url = new UriBuilder("https://www.larousse.fr/dictionnaires/francais/aphorisme/4459").Uri,
+                },
+                new()
+                {
+                    DisplayName = "Wikipédia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Aphorisme").Uri,
+                }
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Je cherchais mon plus lourd fardeau, c'est moi que j'ai trouvé.",
+                    Source = "Friedrich Nietzsche",
+                },
+                new()
+                {
+                    Example = "La vraie éloquence consiste à dire tout ce qu'il faut, et à ne dire que ce qu'il faut.",
+                    Source = "La Rochefoucauld",
                 },
             },
         },
