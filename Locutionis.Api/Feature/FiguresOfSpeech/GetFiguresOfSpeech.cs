@@ -6,7 +6,7 @@ using Mapster;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
-namespace Locutionis.Api.Feature.FigureOfSpeech;
+namespace Locutionis.Api.Feature.FiguresOfSpeech;
 
 internal sealed class GetFiguresOfSpeech
 {
