@@ -7,8 +7,6 @@ french figures of speech.
 
 You can freely play around with the API using the exposed [Swagger UI](https://locutionisapi-production.up.railway.app/swagger/index.html).
 
-> 🛑 For now the API is hosted on [Railway](https://railway.app) under the [Trial plan](https://railway.app/pricing) so the service might not be available at the time you are querying it.
-
 ## Installation
 
 In order to run the API you can either:
