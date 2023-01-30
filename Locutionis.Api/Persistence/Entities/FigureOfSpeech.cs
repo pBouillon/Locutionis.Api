@@ -12,8 +12,8 @@ internal sealed class FigureOfSpeech
     public required string Description { get; set; } = null!;
     public required string Purpose { get; set; } = null!;
 
-    public required ICollection<Usage> Usages { get; set; } = new List<Usage>();
-    public required ICollection<Source> Sources { get; set; } = new List<Source>();
+    public required IList<Usage> Usages { get; set; } = new List<Usage>();
+    public required IList<Source> Sources { get; set; } = new List<Source>();
 
     public string Preview => Description.Length > PreviewLength
         ? $"{Description[..PreviewLength]}..."

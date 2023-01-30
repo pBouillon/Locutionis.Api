@@ -1,4 +1,5 @@
-using Locutionis.Api.Feature.FigureOfSpeech;
+using Locutionis.Api.Feature.FiguresOfSpeech;
+using Locutionis.Api.Feature.Questions;
 using Locutionis.Api.Persistence;
 
 using Microsoft.Data.Sqlite;
@@ -78,6 +79,9 @@ app.UseOutputCache();
 var api = app.MapGroup("api");
 
 api.MapGroup("figures-of-speech")
-    .MapFigureOfSpeechEndpoints();
+    .MapFiguresOfSpeechEndpoints();
+
+api.MapGroup("questions")
+    .MapQuestionsEndpoints();
 
 app.Run();
