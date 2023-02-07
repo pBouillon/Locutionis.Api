@@ -748,6 +748,47 @@ internal static class ApplicationDbContextExtensions
             },
         },
 
+        // Oxymore
+        new FigureOfSpeech
+        {
+            Name = "Oxymore",
+            Description = """
+            L'oxymore est une figure de style qui consiste à associer deux termes ou deux concepts 
+            contradictoires pour suggérer une idée paradoxale.
+            """,
+            Purpose = """
+            L'oxymore est utilisée pour créer une tension entre les deux termes opposés et pour explorer 
+            les idées complexes ou les contradictions. Elle peut également être utilisée pour renforcer 
+            un point, pour surprendre le lecteur ou pour ajouter de l'ironie à un texte.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Oxymore").Uri
+                },
+                new()
+                {
+                    DisplayName = "linternaute",
+                    Url = new UriBuilder("https://www.linternaute.fr/dictionnaire/fr/definition/oxymore/").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Elle se hâte avec lenteur",
+                    Source = "Le Lièvre et la Tortue, Jean de La Fontaine",
+                },
+                new()
+                {
+                    Example = "La clarté sombre des réverbères",
+                    Source = "Les Paradis artificiels, Charles Baudelaire",
+                },
+            },
+        },
+
         // Parataxe
         new FigureOfSpeech
         {
