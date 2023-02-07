@@ -63,18 +63,25 @@ internal sealed class GenerateQuestions
 
     private static Question GenerateQuestionFrom(IList<FigureOfSpeech> figuresOfSpeech)
     {
-        var selected = figuresOfSpeech.PickRandomly();
+        var random = new Random();
+
+        var selectedId = random.Next(0, figuresOfSpeech.Count);
+        var selected = figuresOfSpeech[selectedId];
         
         var solution = selected.Name;
-        var toGuess = selected.Usages.PickRandomly().Example;
 
-        var answers = figuresOfSpeech
+        var exampleToGuessId = random.Next(0, selected.Usages.Count);
+        var toGuess = selected.Usages[exampleToGuessId].Example;
+
+        var wrongAnswers = figuresOfSpeech
             .Select(x => x.Name)
             .Where(name => name != solution)
-            .Take(Question.WrongAnswersCount)
+            .Take(Question.WrongAnswersCount);
+
+        var answers = wrongAnswers
             .Append(solution)
-            .Shuffled();
-        
+            .OrderBy(_ => random.Next());
+
         return new Question
         {
             Answers = answers,
