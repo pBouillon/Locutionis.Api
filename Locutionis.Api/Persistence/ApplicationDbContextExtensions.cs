@@ -333,6 +333,52 @@ internal static class ApplicationDbContextExtensions
             },
         },
 
+        // Épanadiplose
+        new FigureOfSpeech
+        {
+            Name = "Épanadiplose",
+            Description = """
+            L'épanadiplose est une figure de style qui consiste à répéter une même phrase ou une 
+            même partie de phrase à la fin d'un vers ou d'une phrase et au début du vers ou de la 
+            phrase suivante.
+            """,
+            Purpose = """
+            En utilisant l'épanadiplose, un auteur peut souligner une idée ou une image et la rendre 
+            plus mémorable pour le lecteur. Cela peut également renforcer l'impact émotionnel de la 
+            scène ou de l'idée, en ajoutant une résonance ou un effet de boucle qui attire l'attention 
+            du lecteur.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipédia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Épanadiplose").Uri,
+                },
+                new()
+                {
+                    DisplayName = "linternaute",
+                    Url = new UriBuilder("https://www.linternaute.fr/dictionnaire/fr/definition/epanadiplose/").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Voyage, voyage ; Plus loin que la nuit et le jour",
+                    Source = "Voyage voyage,  Desireless"
+                },
+                new()
+                {
+                    Example = "L'espoir fait vivre, l'espoir fait vivre dans les moments les plus sombres",
+                },
+                new()
+                {
+                    Example = "L'amour est éternel, l'amour est éternel et ne meurt jamais",
+                },
+            },
+        },
+
         // Épanorthose
         new FigureOfSpeech
         {
@@ -414,6 +460,51 @@ internal static class ApplicationDbContextExtensions
                 new()
                 {
                     Example = "La Russie a engagé une opération militaire spéciale en Ukraine.",
+                },
+            },
+        },
+
+        // Homéotéleute
+        new FigureOfSpeech
+        {
+            Name = "Homéotéleute",
+            Description = """
+            L'homéotéleute est une figure de style qui consiste à utiliser des mots ayant la même 
+            syllabe finale dans une série de mots ou de phrases pour créer une cadence et une harmonie 
+            musicale dans le discours.
+            """,
+            Purpose = """
+            En utilisant l'homéotéleute, un auteur peut renforcer l'effet poétique de son discours en 
+            créant une cadence et une harmonie musicale. Cela peut également ajouter de la mélodie à 
+            un texte et renforcer l'emphase sur les idées ou les images décrites.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipédia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Homéotéleute").Uri,
+                },
+                new()
+                {
+                    DisplayName = "La langue française",
+                    Url = new UriBuilder("https://www.lalanguefrancaise.com/linguistique/homeoteleute-figure-de-style").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Le cheval c'est trop génial !"
+                },
+                new()
+                {
+                    Example = "La montagne ça vous gagne !"
+                },
+                new()
+                {
+                    Example = "Un mortel, deux mortelles, tous trois également fidèles",
+                    Source = "Le Mouton, Marie-Catherine d'Aulnoy"
                 },
             },
         },
@@ -741,6 +832,52 @@ internal static class ApplicationDbContextExtensions
                 },
             },
         },
+
+        // Prosopopée
+        new FigureOfSpeech
+        {
+            Name = "Prosopopée",
+            Description = """
+            La prosopopée est une figure de style qui consiste à faire parler des objets inanimés, 
+            des animaux ou des idées comme s'ils étaient des êtres humains dotés de pensée et de 
+            parole.
+            """,
+            Purpose = """
+            En utilisant la prosopopée, un auteur peut donner une dimension plus humaine à des objets, 
+            animaux ou idées, en les faisant s'exprimer comme s'ils étaient des êtres conscients. 
+            Cela peut renforcer l'impact émotionnel de la scène ou de l'idée, ou simplement rendre 
+            ces éléments plus mémorables pour le lecteur.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipédia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Prosopopée").Uri,
+                },
+                new()
+                {
+                    DisplayName = "La culture générale",
+                    Url = new UriBuilder("https://www.laculturegenerale.com/prosopopee-definition-exemples/").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Le vent soupirait en traversant les rues désertes",
+                },
+                new()
+                {
+                    Example = "La mer grondait furieusement contre les rochers",
+                },
+                new()
+                {
+                    Example = "La pluie pleurait sans relâche sur les toits",
+                },
+            },
+        },
+
     }
     .Select(Sanitized);
 
