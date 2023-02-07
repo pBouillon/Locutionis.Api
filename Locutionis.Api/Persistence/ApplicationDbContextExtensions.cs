@@ -547,7 +547,45 @@ internal static class ApplicationDbContextExtensions
                     Example = "Prennent des albatros, vastes oiseaux des mers, (...)",
                     Source = "L’albatros, Charles Baudelaire",
                 },
-                
+
+            },
+        },
+
+        // Hyperbole
+        new FigureOfSpeech
+        {
+            Name = "Hyperbole",
+            Description = """
+            Exagération ou surestimation d'un trait, d'un événement ou d'une situation pour 
+            accentuer un point.
+            """,
+            Purpose = """
+            L'hyperbole a pour but de souligner l'importance ou l'effet dramatique d'un point 
+            particulier.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Hyperbole_(rh%C3%A9torique)").Uri
+                },
+                new()
+                {
+                    DisplayName = "La culture générale",
+                    Url = new UriBuilder("https://www.laculturegenerale.com/hyperbole-definition-exemples/").Uri,
+                }
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "Je suis morte de fatigue !",
+                },
+                new()
+                {
+                    Example = "C'était vraiment à mourir de rire !",
+                },
             },
         },
 
