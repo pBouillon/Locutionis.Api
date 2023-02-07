@@ -509,6 +509,48 @@ internal static class ApplicationDbContextExtensions
             },
         },
 
+        // Hypallage
+        new FigureOfSpeech
+        {
+            Name = "Hypallage",
+            Description = """
+            L'hypallage est une figure de style qui consiste à rattacher deux mots ou expressions 
+            ensembles alors que le lecteur s'attend à ce qu'ils soient liés à un troisième.
+            """,
+            Purpose = """
+            L'hypallage est utilisé pour créer un effet de surprise ou pour donner un nouveau sens 
+            à un texte. Il peut également être utilisé pour souligner l'importance d'un objet ou 
+            pour faire ressortir une particularité.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Hypallage").Uri,
+                },
+                new()
+                {
+                    DisplayName = "La langue française",
+                    Url = new UriBuilder("https://www.lalanguefrancaise.com/linguistique/hypallage-definition-exemples").Uri,
+                }
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "La chambre est veuve",
+                    Source = "Alcools - Hôtels, Apollinaire",
+                },
+                new()
+                {
+                    Example = "Prennent des albatros, vastes oiseaux des mers, (...)",
+                    Source = "L’albatros, Charles Baudelaire",
+                },
+                
+            },
+        },
+
         // Hyperhypotaxe
         new FigureOfSpeech
         {
