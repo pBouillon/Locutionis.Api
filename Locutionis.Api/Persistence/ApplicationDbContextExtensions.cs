@@ -540,7 +540,7 @@ internal static class ApplicationDbContextExtensions
                 new()
                 {
                     Example = "La chambre est veuve",
-                    Source = "Alcools - Hôtels, Apollinaire",
+                    Source = "Alcools - Hôtels, Guillaume Apollinaire",
                 },
                 new()
                 {
@@ -916,6 +916,51 @@ internal static class ApplicationDbContextExtensions
             },
         },
 
+        // Polyptote
+        new FigureOfSpeech
+        {
+            Name = "Polyptote",
+            Description = """
+            On parle de polyptote lorsqu'un mot est utilisé sous plusieurs formes dans une même phrase. 
+            Il s'agit le plus souvent d'un verbe, conjugué sous différentes formes.
+            """,
+            Purpose = """
+            En choisissant de répéter un même mot sous plusieurs forme, l'auteur peut chercher à insister 
+            particulièrement sur celui-ci, ou bien chercher un effect commique.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipedia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Polyptote").Uri,
+                },
+                new()
+                {
+                    DisplayName = "La langue française",
+                    Url = new UriBuilder("https://www.lalanguefrancaise.com/linguistique/polyptote-figure-de-style").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = "La flamme de la Résistance ne doit pas s’éteindre et ne s’éteindra pas !",
+                    Source = "Appel du 18 juin 1940, Appel du 18 juin 1940."
+                },
+                new()
+                {
+                    Example = "Je suis tombé déjà ; je puis tomber encore.",
+                    Source = "Les contemplations, Victor Hugo",
+                },
+                new()
+                {
+                    Example = "emps passés Trépassés Les dieux qui me formâtes ; Je ne vis que passant ainsi que vous passâtes",
+                    Source = "Alcools - Cortège, Guillaume Apollinaire",
+                },
+            },
+        },
+
         // Prosopopée
         new FigureOfSpeech
         {
@@ -960,7 +1005,6 @@ internal static class ApplicationDbContextExtensions
                 },
             },
         },
-
     }
     .Select(Sanitized);
 
