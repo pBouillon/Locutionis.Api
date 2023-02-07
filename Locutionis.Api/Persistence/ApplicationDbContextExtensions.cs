@@ -1082,6 +1082,50 @@ internal static class ApplicationDbContextExtensions
                 },
             },
         },
+
+        // Symploque
+        new FigureOfSpeech
+        {
+            Name = "Symploque",
+            Description = """
+            La symploque est une figure de style consistant à commencer et finir ses phrases par le 
+            même mot ou groupe de mots.
+            """,
+            Purpose = """
+            En encerclant chaque phrase des mêmes mots, l'auteur enferme ses propos dans un schéma répétitif. 
+            Par son discours, il peut alors donner le sentiment d'être enfermé dans un schéma répétitif et
+            alors le dénoncer ou bien au contraire le renforcer. Elle est d'ailleurs très utilisée en politique 
+            et en réthorique pour accompagner une situation que l'on veut montrer injuste et indignante.
+            """,
+            Sources = new List<Source>
+            {
+                new()
+                {
+                    DisplayName = "Wikipédia",
+                    Url = new UriBuilder("https://fr.wikipedia.org/wiki/Symploque").Uri,
+                },
+            },
+            Usages = new List<Usage>
+            {
+                new()
+                {
+                    Example = """
+                    Qui est l'auteur de cette loi ? Rullus. Qui a privé du suffrage la plus grande 
+                    partie du peuple romain ? Rullus. Qui a présidé les comices ? Rullus.
+                    """,
+                    Source = "Déclaration de candidature du 5 décembre 2016, Manuel Valls"
+                },
+                new()
+                {
+                    Example = """
+                    On nous dit que la gauche n'a aucune chance mais rien n'est écrit. 
+                    On nous dit qu'elle ne rassemblera jamais, qu'elle en est incapable, rien n'est écrit. 
+                    On nous dit que l'extrême droite est qualifiée d'office pour le second tour, rien n'est écrit. 
+                    """,
+                    Source = "Le Grand Larousse du xxe siècle, Cicéron"
+                },
+            },
+        },
     }
     .Select(Sanitized);
 
