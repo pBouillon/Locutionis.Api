@@ -1032,7 +1032,7 @@ internal static class ApplicationDbContextExtensions
                 },
                 new()
                 {
-                    Example = "emps passés Trépassés Les dieux qui me formâtes ; Je ne vis que passant ainsi que vous passâtes",
+                    Example = "Temps passés Trépassés Les dieux qui me formâtes ; Je ne vis que passant ainsi que vous passâtes",
                     Source = "Alcools - Cortège, Guillaume Apollinaire",
                 },
             },
