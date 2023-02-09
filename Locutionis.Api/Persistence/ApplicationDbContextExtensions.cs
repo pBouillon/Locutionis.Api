@@ -1113,7 +1113,7 @@ internal static class ApplicationDbContextExtensions
                     Qui est l'auteur de cette loi ? Rullus. Qui a privé du suffrage la plus grande 
                     partie du peuple romain ? Rullus. Qui a présidé les comices ? Rullus.
                     """,
-                    Source = "Déclaration de candidature du 5 décembre 2016, Manuel Valls"
+                    Source = "Le Grand Larousse du xxe siècle, Cicéron"
                 },
                 new()
                 {
@@ -1122,7 +1122,7 @@ internal static class ApplicationDbContextExtensions
                     On nous dit qu'elle ne rassemblera jamais, qu'elle en est incapable, rien n'est écrit. 
                     On nous dit que l'extrême droite est qualifiée d'office pour le second tour, rien n'est écrit. 
                     """,
-                    Source = "Le Grand Larousse du xxe siècle, Cicéron"
+                    Source = "Déclaration de candidature du 5 décembre 2016, Manuel Valls"
                 },
             },
         },
