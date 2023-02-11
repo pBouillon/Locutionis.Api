@@ -47,7 +47,8 @@ public class GetFigureOfSpeechByNameTests
     public async Task RetrieveAFigureOfSpeech()
     {
         // Arrange
-        var figuresOfSpeech = _fixture.CreateMany<FigureOfSpeech>();
+        const int figuresOfSpeechCount = 10;
+        var figuresOfSpeech = _fixture.CreateMany<FigureOfSpeech>(figuresOfSpeechCount);
 
         _context.AddRange(figuresOfSpeech);
         _context.SaveChanges();
@@ -59,9 +60,11 @@ public class GetFigureOfSpeechByNameTests
         var retrieved = await Endpoint(expected.Name, _context, logger);
 
         // Assert
-        retrieved.Result.Should().BeOfType<Ok<FigureOfSpeechDetails>>()
-            .And.As<Ok<FigureOfSpeechDetails>>().Value.Should().NotBeNull()
-            .And.BeEquivalentTo(expected, options => options
+        retrieved.Result.Should().NotBeNull()
+            .And.BeOfType<Ok<FigureOfSpeechDetails>>();
+
+        retrieved.Result.As<Ok<FigureOfSpeechDetails>>().Should().BeEquivalentTo(expected,
+            options => options
                 .ExcludingMissingMembers()
                 .Using(new UriStringEquivalencyStep()));
     }
