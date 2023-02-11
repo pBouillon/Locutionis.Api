@@ -19,7 +19,7 @@ internal sealed class GenerateQuestions
         /// <summary>
         /// The number of answers to generate, including the solution
         /// </summary>
-        internal static int WrongAnswersCount = 3;
+        internal static int WrongAnswersCount = 5;
 
         /// <summary>
         /// All potential figures of speech's name that could qualify the <see cref="ToGuess"/>
