@@ -1,5 +1,3 @@
-using Locutionis.Api.Extensions;
-
 using Locutionis.Api.Persistence;
 using Locutionis.Api.Persistence.Entities;
 
@@ -10,7 +8,9 @@ namespace Locutionis.Api.Feature.Questions;
 
 internal sealed class GenerateQuestions
 {
-    private static readonly int MaximumNumberOfQuestions = 10;
+    private static readonly int MaximumNumberOfQuestions = 20;
+
+    internal record QuestionIndexes(int FigureOfSpeechIndex, int UsageIndex);
 
     internal sealed record Question
     {
@@ -51,33 +51,47 @@ internal sealed class GenerateQuestions
             .ToListAsync()
             .ConfigureAwait(false);
 
-        var questions = Enumerable.Range(0, count)
-            .Select(_ => GenerateQuestionFrom(figuresOfSpeech))
-            .Aggregate(
-                Enumerable.Empty<Question>(),
-                (questions, question) => questions.Append(question));
+        var questions = GenerateQuestionsFrom(figuresOfSpeech, count);
 
         logger.LogInformation("{count} questions generated", count);
         return TypedResults.Ok(questions);
     }
 
-    private static Question GenerateQuestionFrom(IList<FigureOfSpeech> figuresOfSpeech)
+    private static IEnumerable<Question> GenerateQuestionsFrom(IList<FigureOfSpeech> figuresOfSpeech, int count)
     {
-        var random = new Random();
+        var usedIndexes = new HashSet<QuestionIndexes>();
+        var questions = new List<Question>();
 
-        var selectedId = random.Next(0, figuresOfSpeech.Count);
-        var selected = figuresOfSpeech[selectedId];
-        
+        for (var i = 0; i < count; ++i)
+        {
+            var indexes = PickUnusedIndexes(figuresOfSpeech, usedIndexes);
+            usedIndexes.Add(indexes);
+
+            var question = GenerateQuestionFrom(indexes, figuresOfSpeech);
+            questions.Add(question);
+        }
+
+        return questions;
+    }
+    
+    private static Question GenerateQuestionFrom(QuestionIndexes indexes, IList<FigureOfSpeech> figuresOfSpeech)
+    {
+        // Extract the indexes
+        var (figureOfSpeechIndex, usageIndex) = indexes;
+
+        // Pick the solution and the example to guess
+        var selected = figuresOfSpeech[figureOfSpeechIndex];
         var solution = selected.Name;
+        var toGuess = selected.Usages[usageIndex].Example;
 
-        var exampleToGuessId = random.Next(0, selected.Usages.Count);
-        var toGuess = selected.Usages[exampleToGuessId].Example;
-
+        // Pick wrong answers to display along with the solution
         var wrongAnswers = figuresOfSpeech
             .Select(x => x.Name)
             .Where(name => name != solution)
             .Take(Question.WrongAnswersCount);
 
+        // Shuffle the wrong answer and the solution
+        var random = new Random();
         var answers = wrongAnswers
             .Append(solution)
             .OrderBy(_ => random.Next());
@@ -89,4 +103,31 @@ internal sealed class GenerateQuestions
             ToGuess = toGuess,
         };
     }
+    
+    private static QuestionIndexes PickUnusedIndexes(
+        IList<FigureOfSpeech> figuresOfSpeech, IEnumerable<QuestionIndexes> usedIndexes)
+    {
+        QuestionIndexes indexes;
+
+        do
+        {
+            indexes = GenerateIndexes();
+        } while (usedIndexes.Contains(indexes));
+
+        return indexes;
+
+        QuestionIndexes GenerateIndexes()
+        {
+            var random = new Random();
+
+            var figuresOfSpeechCount = figuresOfSpeech.Count;
+            var figureOfSpeechIndex = random.Next(0, figuresOfSpeechCount);
+
+            var selectedFigureOfSpeechUsagesCount = figuresOfSpeech[figureOfSpeechIndex].Usages.Count;
+            var usageIndex = random.Next(0, selectedFigureOfSpeechUsagesCount);
+
+            return new QuestionIndexes(figureOfSpeechIndex, usageIndex);
+        }
+    }
 }
+
