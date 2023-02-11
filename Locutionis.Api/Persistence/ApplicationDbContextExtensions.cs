@@ -366,15 +366,12 @@ internal static class ApplicationDbContextExtensions
                 new()
                 {
                     Example = "Voyage, voyage ; Plus loin que la nuit et le jour",
-                    Source = "Voyage voyage,  Desireless"
+                    Source = "Voyage voyage, Desireless"
                 },
                 new()
                 {
-                    Example = "L'espoir fait vivre, l'espoir fait vivre dans les moments les plus sombres",
-                },
-                new()
-                {
-                    Example = "L'amour est éternel, l'amour est éternel et ne meurt jamais",
+                    Example = "Trop grand, impossible a arrêter ; Arrêté, poisseux au départ, chanceux à la sortie",
+                    Source = "Demain, c'est loin, IAM"
                 },
             },
         },
