@@ -3,20 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locutionis.Api", "Locutionis.Api\Locutionis.Api.csproj", "{DAD80D1D-F49C-4008-8BF0-D98C86C75961}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Locutionis.Api", "Locutionis.Api\Locutionis.Api.csproj", "{DAD80D1D-F49C-4008-8BF0-D98C86C75961}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{04F956F5-52A4-4538-8988-C62D4E73D606}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{34AAE06F-8D69-4D05-BD89-B7598CBB69D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Locutionis.UnitTests", "Locutionis.UnitTests\Locutionis.UnitTests.csproj", "{9C323D21-F71A-42C1-BF6B-26EB2881D662}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DAD80D1D-F49C-4008-8BF0-D98C86C75961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DAD80D1D-F49C-4008-8BF0-D98C86C75961}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAD80D1D-F49C-4008-8BF0-D98C86C75961}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAD80D1D-F49C-4008-8BF0-D98C86C75961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C323D21-F71A-42C1-BF6B-26EB2881D662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C323D21-F71A-42C1-BF6B-26EB2881D662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C323D21-F71A-42C1-BF6B-26EB2881D662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C323D21-F71A-42C1-BF6B-26EB2881D662}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DAD80D1D-F49C-4008-8BF0-D98C86C75961} = {04F956F5-52A4-4538-8988-C62D4E73D606}
+		{9C323D21-F71A-42C1-BF6B-26EB2881D662} = {34AAE06F-8D69-4D05-BD89-B7598CBB69D4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AEFF808-C138-4EFD-BAA9-3623C2E8E682}
 	EndGlobalSection
 EndGlobal

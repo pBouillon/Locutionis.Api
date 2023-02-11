@@ -5,6 +5,9 @@ using Locutionis.Api.Persistence;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("Locutionis.UnitTests")]
 
 var builder = WebApplication.CreateBuilder(args);
 
