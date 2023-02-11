@@ -238,7 +238,7 @@ internal static class ApplicationDbContextExtensions
                 },
                 new()
                 {
-                    Example = "Le pied de la table a été rongé par les thermites.",
+                    Example = "Le pied de la table a été rongé par les termites.",
                 },
             }
         },
@@ -370,7 +370,7 @@ internal static class ApplicationDbContextExtensions
                 },
                 new()
                 {
-                    Example = "Trop grand, impossible a arrêter ; Arrêté, poisseux au départ, chanceux à la sortie",
+                    Example = "Trop grand, impossible à arrêter ; Arrêté, poisseux au départ, chanceux à la sortie",
                     Source = "Demain, c'est loin, IAM"
                 },
             },
