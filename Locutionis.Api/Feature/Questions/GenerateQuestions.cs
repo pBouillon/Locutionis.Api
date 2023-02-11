@@ -4,6 +4,8 @@ using Locutionis.Api.Persistence.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
+using System.Security.Cryptography;
+
 namespace Locutionis.Api.Feature.Questions;
 
 internal sealed class GenerateQuestions
@@ -74,7 +76,8 @@ internal sealed class GenerateQuestions
         return questions;
     }
     
-    private static Question GenerateQuestionFrom(QuestionIndexes indexes, IList<FigureOfSpeech> figuresOfSpeech)
+    private static Question GenerateQuestionFrom(
+        QuestionIndexes indexes, IList<FigureOfSpeech> figuresOfSpeech)
     {
         // Extract the indexes
         var (figureOfSpeechIndex, usageIndex) = indexes;
@@ -91,10 +94,9 @@ internal sealed class GenerateQuestions
             .Take(Question.WrongAnswersCount);
 
         // Shuffle the wrong answer and the solution
-        var random = new Random();
         var answers = wrongAnswers
             .Append(solution)
-            .OrderBy(_ => random.Next());
+            .OrderBy(_ => Guid.NewGuid());
 
         return new Question
         {
@@ -118,16 +120,13 @@ internal sealed class GenerateQuestions
 
         QuestionIndexes GenerateIndexes()
         {
-            var random = new Random();
-
             var figuresOfSpeechCount = figuresOfSpeech.Count;
-            var figureOfSpeechIndex = random.Next(0, figuresOfSpeechCount);
+            var figureOfSpeechIndex = RandomNumberGenerator.GetInt32(0, figuresOfSpeechCount);
 
             var selectedFigureOfSpeechUsagesCount = figuresOfSpeech[figureOfSpeechIndex].Usages.Count;
-            var usageIndex = random.Next(0, selectedFigureOfSpeechUsagesCount);
+            var usageIndex = RandomNumberGenerator.GetInt32(0, selectedFigureOfSpeechUsagesCount);
 
             return new QuestionIndexes(figureOfSpeechIndex, usageIndex);
         }
     }
 }
-
